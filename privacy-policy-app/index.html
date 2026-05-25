@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fanta Puzzle - App Ufficiale</title>
+    <meta name="description" content="Pagina ufficiale dell'app Fanta Puzzle - Divertiti con puzzle fantasy e metti alla prova le tue abilità!">
+    <style>
+        :root {
+            --primary-color: #4c51bf;
+            --secondary-color: #f8faff;
+            --accent-color: #7c4dff;
+            --text-color: #333;
+            --light-text: #666;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-top: 80px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .app-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            margin: 40px 0;
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .app-info {
+            flex: 1;
+            padding-right: 30px;
+            min-width: 300px;
+        }
+        
+        .app-image {
+            flex: 1;
+            text-align: center;
+            min-width: 300px;
+        }
+        
+        .app-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .feature-card {
+            flex: 1;
+            min-width: 250px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .download-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        
+        .download-button:hover {
+            background-color: #6c3cef;
+        }
+        
+        .privacy-section {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: var(--box-shadow);
+        }
+        
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: var(--light-text);
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .app-section {
+                flex-direction: column;
+            }
+            
+            .app-info {
+                padding-right: 0;
+                padding-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Fanta Puzzle</h1>
+        <p>Un'avventura puzzle nel mondo fantasy</p>
+    </header>
+    
+    <div class="container">
+        <div class="app-section">
+            <div class="app-info">
+                <h2>Benvenuto in Fanta Puzzle</h2>
+                <p>Fanta Puzzle è un gioco di puzzle con bellissime immagini fantasy. Metti alla prova le tue abilità mentali, divertiti con i diversi livelli di difficoltà e immergiti in un mondo di fantasia.</p>
+                
+                <p>Disponibile ora sul Google Play Store!</p>
+                
+                <a href="https://play.google.com/store/apps/details?id=re.alessandro.fanta" class="download-button">Scarica l'App</a>
+            </div>
+            
+            <div class="app-image">
+                <img src="https://fanta.alessandro.re/favicon/og-image.png" alt="Screenshot di Fanta Puzzle - Fantasy Puzzle Game">
+            </div>
+        </div>
+        
+        <h2>Caratteristiche Principali</h2>
+        <div class="features">
+            <div class="feature-card">
+                <h3>Immagini Fantasy</h3>
+                <p>Goditi bellissime immagini fantasy mentre risolvi ogni puzzle. Ogni livello presenta un'immagine unica e suggestiva del mondo fantasy.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>Tre Livelli di Difficoltà</h3>
+                <p>Scegli tra facile (3×3), medio (4×4) o difficile (5×5) per adattare la sfida alle tue capacità o metterti alla prova con puzzle più complessi.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>Sfida te stesso</h3>
+                <p>Completa ogni puzzle nel minor tempo possibile e con il minor numero di mosse per ottenere i punteggi più alti.</p>
+            </div>
+        </div>
+        
+        <div class="privacy-section" id="privacy-policy">
+            <h2>Privacy Policy</h2>
+            <p><strong>Data di ultima modifica:</strong> 24 giugno 2025</p>
+            
+            <h3>INTRODUZIONE</h3>
+            <p>Fanta Puzzle ("noi", "nostra" o "l'app") è impegnata a proteggere la privacy degli utenti. Questa Privacy Policy spiega come raccogliamo, utilizziamo e proteggiamo le informazioni quando utilizzi la nostra app mobile.</p>
+            
+            <h3>RACCOLTA E UTILIZZO DELLE INFORMAZIONI</h3>
+            <p>Fanta Puzzle è un gioco di puzzle offline che non richiede registrazione e non raccoglie attivamente dati personali dagli utenti. L'app funziona principalmente in locale sul dispositivo dell'utente.</p>
+            
+            <h3>DATI RACCOLTI AUTOMATICAMENTE</h3>
+            <p>L'app potrebbe raccogliere automaticamente alcune informazioni tecniche non personali per il funzionamento dell'app, come:</p>
+            <ul>
+                <li>Informazioni sul dispositivo (modello, sistema operativo)</li>
+                <li>Statistiche di crash per la risoluzione di problemi tecnici</li>
+                <li>Dati di utilizzo anonimi per migliorare le funzionalità dell'app</li>
+            </ul>
+            <p>Questi dati sono raccolti in forma anonima e aggregata, senza identificare singoli utenti.</p>
+            
+            <h3>SERVIZI DI TERZE PARTI</h3>
+            <p>L'app utilizza i servizi del Google Play Store per la distribuzione e può utilizzare API Google per alcune funzionalità. Questi servizi potrebbero raccogliere informazioni aggiuntive come descritto nelle loro rispettive politiche sulla privacy.</p>
+            
+            <h3>CONDIVISIONE DELLE INFORMAZIONI</h3>
+            <p>Non vendiamo, scambiamo o trasferiamo in altro modo i dati degli utenti a terze parti.</p>
+            
+            <h3>SICUREZZA</h3>
+            <p>Ci impegniamo a garantire la sicurezza delle informazioni. Adottiamo misure fisiche, elettroniche e gestionali appropriate per proteggere le informazioni raccolte.</p>
+            
+            <h3>MODIFICHE ALLA NOSTRA PRIVACY POLICY</h3>
+            <p>Questa Privacy Policy può essere aggiornata occasionalmente. Ti invitiamo a consultare periodicamente questa pagina per eventuali modifiche.</p>
+            
+            <h3>CONTATTI</h3>
+            <p>Per domande o chiarimenti su questa Privacy Policy, puoi contattarci all'indirizzo email: privacy@alessandro.re</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Fanta Puzzle - Tutti i diritti riservati</p>
+        <p>Sviluppato da AleX</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimal-ui">
+    
+    <!-- SEO Meta Tags -->
+    <title>2026 Fanta Puzzle Game - Puzzle con Immagini Fantasy</title>
+    <meta name="description" content="Gioca al Fanta Puzzle Game: puzzle slide con bellissime immagini fantasy. Sfida te stesso con 3 livelli di difficoltà e metti alla prova le tue abilità!">
+    <meta name="keywords" content="puzzle, gioco puzzle, puzzle fantasy, gioco online, puzzle game, fantasy, fanta puzzle">
+    <meta name="author" content="AleX">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fanta.alessandro.re/">
+    <meta property="og:title" content="Fanta Puzzle Game - Rompicapo Fantasy">
+    <meta property="og:description" content="Divertiti con il puzzle game fantasy: completa il puzzle nel minor tempo e con meno mosse possibili.">
+    <meta property="og:image" content="https://fanta.alessandro.re/favicon/og-image.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://fanta.alessandro.re/">
+    <meta property="twitter:title" content="Fanta Puzzle Game - Rompicapo Fantasy">
+    <meta property="twitter:description" content="Divertiti con il puzzle game fantasy: completa il puzzle nel minor tempo e con meno mosse possibili.">
+    <meta property="twitter:image" content="https://fanta.alessandro.re/favicon/og-image.png">
+    
+    <!-- PWA and Touch App Configuration -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Fanta Puzzle">
+    <meta name="application-name" content="Fanta Puzzle">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#4c51bf">
+    <meta name="msapplication-navbutton-color" content="#4c51bf">
+    <meta name="msapplication-TileColor" content="#4c51bf">
+    <meta name="msapplication-starturl" content="/">
+    
+    <!-- Prevent iOS Safari from showing the address bar -->
+    <meta name="apple-touch-fullscreen" content="yes">
+    
+    <!-- Favicon Configuration -->
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <link rel="icon" href="favicon/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Fanta Puzzle Game",
+      "description": "Un puzzle game con immagini fantasy in cui devi ricomporre l'immagine nel minor tempo possibile e con meno mosse.",
+      "genre": ["Puzzle", "Casual", "Brain Game"],
+      "url": "https://fanta.alessandro.re/",
+      "playMode": "SinglePlayer",
+      "applicationCategory": "Game",
+      "operatingSystem": "Web Browser",
+      "image": "https://fanta.alessandro.re/favicon/og-image.png",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "24"
+      },
+      "inLanguage": "it"
+    }
+    </script>
+</head>
+<body>
+    <!-- Floating geometric shapes for animated background -->
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    
+    <header>
+        <h1>Fanta Puzzle Game</h1>
+        <div class="header-controls">
+            <button id="audio-toggle" class="audio-btn" aria-label="Attiva/Disattiva audio" title="Attiva/Disattiva audio">🔊</button>
+            <button id="about-button" class="about-btn" aria-label="Informazioni sul gioco">About</button>
+        </div>
+    </header>
+    
+    <main>
+        <div class="game-container">
+            <div class="puzzle-container">
+                <div id="puzzle-board" class="puzzle-board"></div>
+            </div>
+            
+            <div class="reference-container">
+                <div class="reference-image">
+                    <img id="reference-img" src="images/01.buzzling.png" alt="Immagine di riferimento per il puzzle - immagine fantasy Buzzling">
+                </div>
+                
+                <div class="stats-container mobile-stats">
+                    <div id="timer" aria-live="polite"><strong>Tempo: 00:00</strong></div>
+                    <div id="move-counter" aria-live="polite"><strong>Mosse: 0</strong></div>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <div class="stats-container desktop-stats">
+                    <div id="timer-desktop" aria-live="polite"><strong>Tempo: 00:00</strong></div>
+                    <div id="move-counter-desktop" aria-live="polite"><strong>Mosse: 0</strong></div>
+                </div>
+                
+                <button id="start-button" aria-label="Inizia una nuova partita">Nuova Partita</button>
+                
+                <div class="difficulty">
+                    <label for="difficulty" class="selector-label">Difficoltà: </label>
+                    <select id="difficulty" aria-label="Seleziona livello di difficoltà">
+                        <option value="3">Facile (3×3)</option>
+                        <option value="4" selected>Media (4×4)</option>
+                        <option value="5">Difficile (5×5)</option>
+                    </select>
+                </div>
+                
+                <div class="image-selection">
+                    <label for="image-select" class="selector-label">Livello corrente:</label>
+                    <select id="image-select" aria-label="Livello corrente del puzzle">
+                        <!-- Le opzioni verranno caricate dinamicamente -->
+                    </select>
+                    <p class="game-info">Completa gli 8 livelli in sequenza per finire il gioco!</p>
+                </div>
+                
+                <!-- TEMPORANEAMENTE DISABILITATO - Caricamento immagini personalizzate
+                <div class="image-upload">
+                    <label for="custom-image" class="selector-label">O carica la tua immagine:</label>
+                    <input type="file" id="custom-image" accept="image/*">
+                </div>
+                -->
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Fanta Puzzle Game by AleX</p>
+    </footer>
+    
+    <div id="congratulations" class="modal" role="dialog" aria-labelledby="completion-title" aria-modal="true">
+        <div class="modal-content">
+            <h2 id="completion-title">Congratulazioni!</h2>
+            <p id="completion-message">Hai completato il puzzle <strong><span id="completion-time"></span></strong> in <strong><span id="completion-moves"></span> mosse</strong>!</p>
+            <p id="performance-info" class="performance-info"></p>
+            <div class="modal-buttons">
+                <button id="retry-button" aria-label="Riprova lo stesso puzzle">Riprova</button>
+                <button id="next-level-button" aria-label="Passa al livello successivo">Livello Successivo</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- About Modal -->
+    <div id="about-modal" class="modal" role="dialog" aria-labelledby="about-title" aria-modal="true">
+        <div class="modal-content">
+            <p id="about-title"><strong>Fanta Puzzle Game</strong></p>
+            <p>Coded with 💖 & ☕ by <strong>AleX</strong></p>
+            <button id="close-about-button" aria-label="Chiudi finestra informazioni">Chiudi</button>
+        </div>
+    </div>
+
+    <script src="puzzle.js"></script>
+</body>
+</html>
